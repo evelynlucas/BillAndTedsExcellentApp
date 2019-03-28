@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BillAndTedsExcellentApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="splash_screen_text">Hello SPLASH SCREEN</string>
+    <string name="hello_blank_fragment">Hello Blank Fragment</string>
+
 </resources>
