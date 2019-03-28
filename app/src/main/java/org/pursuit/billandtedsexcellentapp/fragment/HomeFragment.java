@@ -6,11 +6,19 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.billandtedsexcellentapp.R;
+import org.pursuit.billandtedsexcellentapp.model.CharactersWrapper;
+import org.pursuit.billandtedsexcellentapp.network.APIService;
+import org.pursuit.billandtedsexcellentapp.network.RetrofitSingleton;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +26,7 @@ import org.pursuit.billandtedsexcellentapp.R;
 public class HomeFragment extends Fragment {
 
     private FragmentInterface fragmentInterface;
+    private static final String TAG = "EvelynActivity";
 
 
     public HomeFragment() {
@@ -55,5 +64,19 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        RetrofitSingleton.getInstance()
+                .create(APIService.class)
+                .getCharacters()
+                .enqueue(new Callback<CharactersWrapper>() {
+                    @Override
+                    public void onResponse(Call<CharactersWrapper> call, Response<CharactersWrapper> response) {
+                        Log.d(TAG, response.body().getCharacters().get(2).getName());
+                    }
+
+                    @Override
+                    public void onFailure(Call<CharactersWrapper> call, Throwable t) {
+                        Log.d(TAG, "onFailure: " + t.toString());
+                    }
+                });
     }
 }
