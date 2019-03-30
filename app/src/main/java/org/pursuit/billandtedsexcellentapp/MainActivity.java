@@ -35,4 +35,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                 .replace(R.id.fragment_container, homeFragment)
                 .commit();
     }
+
+    @Override
+    public void moveToDetailFragment() {
+
+    }
 }
