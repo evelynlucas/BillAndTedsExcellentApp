@@ -29,6 +29,8 @@ public class BTViewHolder extends RecyclerView.ViewHolder {
         nameTextView.setText(characterModel.getName());
         Picasso.get()
                 .load(characterModel.getImage())
+                .centerCrop()
+                .resize(200, 200)
                 .into(characterImageView);
 
         itemView.setOnClickListener(new View.OnClickListener() {

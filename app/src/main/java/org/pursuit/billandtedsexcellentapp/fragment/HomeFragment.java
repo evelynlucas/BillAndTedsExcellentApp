@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +17,14 @@ import org.pursuit.billandtedsexcellentapp.R;
 import org.pursuit.billandtedsexcellentapp.model.CharactersWrapper;
 import org.pursuit.billandtedsexcellentapp.network.APIService;
 import org.pursuit.billandtedsexcellentapp.network.RetrofitSingleton;
+import org.pursuit.billandtedsexcellentapp.recyclerview.BTAdapter;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +33,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentInterface fragmentInterface;
     private static final String TAG = "EvelynActivity";
+    private RecyclerView recyclerView;
 
 
     public HomeFragment() {
@@ -62,8 +69,10 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        recyclerView = view.findViewById(R.id.recycler_view);
         RetrofitSingleton.getInstance()
                 .create(APIService.class)
                 .getCharacters()
@@ -71,6 +80,13 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onResponse(Call<CharactersWrapper> call, Response<CharactersWrapper> response) {
                         Log.d(TAG, response.body().getCharacters().get(2).getName());
+                        CharactersWrapper charactersWrapper = response.body();
+                        List<CharactersWrapper.CharacterModel> characterModelList = charactersWrapper.getCharacters();
+                        BTAdapter adapter = new BTAdapter(characterModelList, fragmentInterface);
+                        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
+
+                        recyclerView.setAdapter(adapter);
+                        recyclerView.setLayoutManager(linearLayoutManager);
                     }
 
                     @Override
