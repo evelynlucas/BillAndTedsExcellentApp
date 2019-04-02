@@ -9,6 +9,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.pursuit.billandtedsexcellentapp.R;
 
@@ -77,6 +81,20 @@ public class DetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView nameTextView = view.findViewById(R.id.detail_name_textview);
+        ImageView imageView = view.findViewById(R.id.detail_imageview);
+        TextView bioTextView = view.findViewById(R.id.detail_bio_textview);
+        TextView quoteTextView = view.findViewById(R.id.detail_quote_textview);
+        TextView urlTextView = view.findViewById(R.id.detail_url_textview);
+
+        nameTextView.setText(nameString);
+        bioTextView.setText(bioString);
+        quoteTextView.setText(quoteString);
+        urlTextView.setText(urlString);
+
+        Picasso.get()
+                .load(imageString)
+                .into(imageView);
 
     }
 }

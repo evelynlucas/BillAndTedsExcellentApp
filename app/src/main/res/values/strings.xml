@@ -4,5 +4,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="splash_screen_text">Hello SPLASH SCREEN</string>
     <string name="hello_blank_fragment">Hello Blank Fragment</string>
+    <string name="github_title">GitHub</string>
+    <string name="linkedin_title">LinkedIn</string>
+    <string name="github_url">https://github.com/evelynlucas/BillAndTedsExcellentApp</string>
+    <string name="linkedin_url">https://www.linkedin.com/in/evelyn-lucas-52839b174/</string>
+    <string name="no_browser_available_text">No browser available</string>
 
 </resources>

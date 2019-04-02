@@ -7,9 +7,8 @@
     android:background="@android:color/holo_blue_dark"
     tools:context=".fragment.DetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/detail__name_textview"
+        android:id="@+id/detail_name_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36sp"
@@ -24,14 +23,14 @@
         android:id="@+id/detail_imageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/detail__bio_textview"
+        app:layout_constraintBottom_toTopOf="@id/detail_bio_cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detail__name_textview"
+        app:layout_constraintTop_toBottomOf="@id/detail_name_textview"
         tools:src="@mipmap/ic_launcher" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/detail__bio_textview"
+        android:id="@+id/detail_bio_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -41,38 +40,41 @@
         app:layout_constraintTop_toBottomOf="@id/detail_imageview">
 
         <TextView
+            android:id="@+id/detail_bio_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="BIO TEXT" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/detail__quote_textview"
+        android:id="@+id/detail_quote_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detail__bio_textview">
+        app:layout_constraintTop_toBottomOf="@id/detail_bio_cardview">
 
         <TextView
+            android:id="@+id/detail_quote_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="QUOTE" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/detail__url_textview"
+        android:id="@+id/detail_url_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detail__quote_textview">
+        app:layout_constraintTop_toBottomOf="@id/detail_quote_cardview">
 
         <TextView
+            android:id="@+id/detail_url_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="URL" />
