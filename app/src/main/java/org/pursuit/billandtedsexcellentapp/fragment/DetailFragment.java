@@ -1,6 +1,5 @@
 package org.pursuit.billandtedsexcellentapp.fragment;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
