@@ -2,6 +2,8 @@ package org.pursuit.billandtedsexcellentapp.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -91,6 +94,19 @@ public class DetailFragment extends Fragment {
         bioTextView.setText(bioString);
         quoteTextView.setText(quoteString);
         urlTextView.setText(urlString);
+
+        urlTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri website = Uri.parse(urlString);
+                Intent intent = new Intent(Intent.ACTION_VIEW, website);
+                if (intent.resolveActivity(v.getContext().getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(v.getContext(), getString(R.string.no_browser_available_text), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         Picasso.get()
                 .load(imageString)
