@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -24,20 +23,17 @@
         android:id="@+id/detail_imageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/fragment_detail_image_content_description"
         app:layout_constraintBottom_toTopOf="@id/detail_bio_cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_name_textview"
-        tools:src="@mipmap/ic_launcher"
-        android:contentDescription="@string/fragment_detail_image_content_description" />
+        tools:src="@mipmap/ic_launcher" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/detail_bio_cardview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        style="@style/cardview_style"
         app:cardPreventCornerOverlap="false"
-        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_imageview">
@@ -49,22 +45,16 @@
 
             <TextView
                 android:id="@+id/header_bio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/black"
-                android:padding="8dp"
+                style="@style/cardview_header_style"
                 android:text="BIO"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Bio" />
+                tools:text="BIO" />
 
             <TextView
                 android:id="@+id/detail_bio_textview"
-                android:padding="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/header_bio"
+                android:padding="8dp"
                 android:textSize="20sp"
                 tools:text="BIO TEXT" />
         </RelativeLayout>
@@ -72,38 +62,60 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/detail_quote_cardview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:padding="4dp"
+        style="@style/cardview_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_bio_cardview">
 
-        <TextView
-            android:id="@+id/detail_quote_textview"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            tools:text="QUOTE" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/header_quote"
+                style="@style/cardview_header_style"
+                android:text="@string/cardview_header_quote_text"
+                tools:text="QUOTE" />
+
+            <TextView
+                android:id="@+id/detail_quote_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header_quote"
+                android:padding="8dp"
+                android:textSize="20sp"
+                tools:text="QUOTE" />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/detail_url_cardview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:padding="4dp"
+        style="@style/cardview_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_quote_cardview">
 
-        <TextView
-            android:id="@+id/detail_url_textview"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            tools:text="URL" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/header_url"
+                style="@style/cardview_header_style"
+                android:text="MORE INFO"
+                tools:text="MORE INFO" />
+
+            <TextView
+                android:id="@+id/detail_url_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header_url"
+                android:textSize="20sp"
+                tools:text="URL" />
+
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>
