@@ -10,5 +10,6 @@
     <string name="linkedin_url">https://www.linkedin.com/in/evelyn-lucas-52839b174/</string>
     <string name="no_browser_available_text">No browser available</string>
     <string name="fragment_detail_image_content_description">Image of character from Bill and Ted Movies</string>
+    <string name="cardview_header_quote_text">QUOTE</string>
 
 </resources>
