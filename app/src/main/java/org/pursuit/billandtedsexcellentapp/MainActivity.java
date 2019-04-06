@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.pursuit.billandtedsexcellentapp.fragment.DetailFragment;
@@ -28,16 +30,12 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
 
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
 
-
         adapter.addFragment(HomeFragment.newInstance(), "Home");
         adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
-        adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
-
+        adapter.addFragment(QuestionFragment.newInstance(), "Fake");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
     }
 
     @Override
@@ -66,6 +64,24 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                 .replace(R.id.fragment_container, DetailFragment.newInstance(name, bio, quote, image, url))
                 .addToBackStack(null)
                 .commit();
+    }
+
+    @Override
+    public void moveToDetailFragmentWithinHomeFragment(String name, String bio, String quote, String image, String url) {
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.detail_fragment_replacement_layout, DetailFragment.newInstance(name, bio, quote, image, url))
+                .addToBackStack(null)
+                .commit();
+
+    }
+
+    @Override
+    public void showVisibilityDetailFragment() {
+        LinearLayout linearLayout = findViewById(R.id.detail_fragment_replacement_layout);
+        linearLayout.setVisibility(View.VISIBLE);
+
     }
 
     @Override
