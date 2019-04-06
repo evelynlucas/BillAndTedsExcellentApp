@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import org.pursuit.billandtedsexcellentapp.R;
 import org.pursuit.billandtedsexcellentapp.model.CharactersWrapper;
@@ -34,6 +35,7 @@ public class HomeFragment extends Fragment {
     private FragmentInterface fragmentInterface;
     private static final String TAG = "EvelynActivity";
     private RecyclerView recyclerView;
+    private LinearLayout linearLayout;
 
 
     public HomeFragment() {
@@ -73,6 +75,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.recycler_view);
+        linearLayout = view.findViewById(R.id.detail_fragment_replacement_layout);
         RetrofitSingleton.getInstance()
                 .create(APIService.class)
                 .getCharacters()
