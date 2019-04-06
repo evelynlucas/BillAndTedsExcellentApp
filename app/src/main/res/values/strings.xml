@@ -11,5 +11,6 @@
     <string name="no_browser_available_text">No browser available</string>
     <string name="fragment_detail_image_content_description">Image of character from Bill and Ted Movies</string>
     <string name="cardview_header_quote_text">QUOTE</string>
+    <string name="quiz_intro_text">Answer these questions to find out which B and T character you are!</string>
 
 </resources>
