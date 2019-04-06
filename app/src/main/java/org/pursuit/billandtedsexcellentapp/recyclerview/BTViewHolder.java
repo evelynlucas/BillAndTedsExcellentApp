@@ -1,6 +1,9 @@
 package org.pursuit.billandtedsexcellentapp.recyclerview;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,6 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import org.pursuit.billandtedsexcellentapp.R;
 import org.pursuit.billandtedsexcellentapp.fragment.FragmentInterface;
+import org.pursuit.billandtedsexcellentapp.fragment.HomeFragment;
 import org.pursuit.billandtedsexcellentapp.model.CharactersWrapper;
 
 public class BTViewHolder extends RecyclerView.ViewHolder {
@@ -34,6 +38,8 @@ public class BTViewHolder extends RecyclerView.ViewHolder {
                 .into(characterImageView);
 
         itemView.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
                 fragmentInterface.moveToDetailFragment(characterModel.getName(),

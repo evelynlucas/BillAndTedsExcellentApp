@@ -2,6 +2,8 @@ package org.pursuit.billandtedsexcellentapp;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import org.pursuit.billandtedsexcellentapp.fragment.DetailFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.FragmentInterface;
 import org.pursuit.billandtedsexcellentapp.fragment.HomeFragment;
+import org.pursuit.billandtedsexcellentapp.fragment.QuestionFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.SplashScreenFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
@@ -19,8 +22,22 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         moveToFirstFragment();
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+
+        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
+
+
+        adapter.addFragment(HomeFragment.newInstance(), "Home");
+        adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
+        adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
+
+
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
     @Override
