@@ -27,20 +27,21 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .replace(R.id.fragment_container,RootFragment.newInstance())
-//                .commit();
-        ViewPager viewPager = findViewById(R.id.viewpager);
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(HomeFragment.newInstance(), "Home");
-        adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
-        adapter.addFragment(QuestionFragment.newInstance(), "Fake");
-
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container,RootFragment.newInstance())
+                .commit();
+//        ViewPager viewPager = findViewById(R.id.viewpager);
+//        TabLayout tabLayout = findViewById(R.id.tab_layout);
+//        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
+//
+//        adapter.addFragment(HomeFragment.newInstance(), "Home");
+//        adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
+//        adapter.addFragment(QuestionFragment.newInstance(), "Fake");
+//
+//        viewPager.setAdapter(adapter);
+//        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -65,14 +66,17 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     @Override
     public void moveFromSplashScreenFragment() {
 
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
+
 
         adapter.addFragment(HomeFragment.newInstance(), "Home");
         adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
         adapter.addFragment(QuestionFragment.newInstance(), "Fake");
 
-//        viewPager.setAdapter(adapter);
-//        tabLayout.setupWithViewPager(viewPager);
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
     }
 

@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment implements HomeFragmentInterface {
                 .enqueue(new Callback<CharactersWrapper>() {
                     @Override
                     public void onResponse(Call<CharactersWrapper> call, Response<CharactersWrapper> response) {
-                        Log.d(TAG, response.body().getCharacters().get(2).getName());
+                        Log.d(TAG, response.body().getCharacters().get(3).getName());
                         CharactersWrapper charactersWrapper = response.body();
                         List<CharactersWrapper.CharacterModel> characterModelList = charactersWrapper.getCharacters();
                         BTAdapter adapter = new BTAdapter(characterModelList, homeFragmentInterface);
