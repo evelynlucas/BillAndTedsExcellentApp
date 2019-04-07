@@ -19,7 +19,6 @@ import org.pursuit.billandtedsexcellentapp.R;
  */
 public class RootFragment extends Fragment {
 
-
     public RootFragment() {
         // Required empty public constructor
     }

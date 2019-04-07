@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import org.pursuit.billandtedsexcellentapp.MainActivity;
 import org.pursuit.billandtedsexcellentapp.R;
@@ -25,6 +26,7 @@ public class SplashScreenFragment extends Fragment {
     private FragmentInterface fragmentInterface;
     private CountDownTimer countDownTimer;
     private static int SCREEN_TIME = 3000;
+    private FrameLayout frameLayout;
 
 
     public SplashScreenFragment() {
@@ -62,27 +64,28 @@ public class SplashScreenFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        new Handler().postDelayed(new Runnable() {
+        frameLayout = view.findViewById(R.id.splash_screen_frame);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fragmentInterface.moveFromSplashScreenFragment();
+                frameLayout.setVisibility(View.INVISIBLE);
+
+            }
+        }, SCREEN_TIME);
+
+//        countDownTimer = new CountDownTimer(3000,1000) {
 //            @Override
-//            public void run() {
+//            public void onTick(long millisUntilFinished) {
+//
+//            }
+//
+//            @Override
+//            public void onFinish() {
 //                fragmentInterface.moveFromSplashScreenFragment();
 //            }
-//        }, SCREEN_TIME);
-
-        countDownTimer = new CountDownTimer(3000,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-
-            }
-
-            @Override
-            public void onFinish() {
-//                fragmentInterface.moveFromSplashScreenFragment();
-//                fragmentInterface.moveToFirstFragment();
-                fragmentInterface.moveFromSplashScreenFragment();
-            }
-        };
-        countDownTimer.start();
+//        };
+//        countDownTimer.start();
 
     }
 }
