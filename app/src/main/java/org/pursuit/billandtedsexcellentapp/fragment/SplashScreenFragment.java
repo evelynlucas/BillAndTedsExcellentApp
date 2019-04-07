@@ -4,10 +4,12 @@ package org.pursuit.billandtedsexcellentapp.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ import org.pursuit.billandtedsexcellentapp.R;
 public class SplashScreenFragment extends Fragment {
 
     private FragmentInterface fragmentInterface;
+    private CountDownTimer countDownTimer;
     private static int SCREEN_TIME = 3000;
 
 
@@ -59,12 +62,27 @@ public class SplashScreenFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        new Handler().postDelayed(new Runnable() {
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                fragmentInterface.moveFromSplashScreenFragment();
+//            }
+//        }, SCREEN_TIME);
+
+        countDownTimer = new CountDownTimer(3000,1000) {
             @Override
-            public void run() {
-                fragmentInterface.moveToHomeFragment();
+            public void onTick(long millisUntilFinished) {
+
             }
-        }, SCREEN_TIME);
+
+            @Override
+            public void onFinish() {
+//                fragmentInterface.moveFromSplashScreenFragment();
+//                fragmentInterface.moveToFirstFragment();
+                fragmentInterface.moveFromSplashScreenFragment();
+            }
+        };
+        countDownTimer.start();
 
     }
 }

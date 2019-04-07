@@ -14,15 +14,17 @@ import com.squareup.picasso.Picasso;
 import org.pursuit.billandtedsexcellentapp.R;
 import org.pursuit.billandtedsexcellentapp.fragment.DetailFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.FragmentInterface;
+import org.pursuit.billandtedsexcellentapp.fragment.HomeFragment;
+import org.pursuit.billandtedsexcellentapp.fragment.HomeFragmentInterface;
 import org.pursuit.billandtedsexcellentapp.model.CharactersWrapper;
 
 public class BTViewHolder extends RecyclerView.ViewHolder {
 
     private TextView nameTextView;
     private ImageView characterImageView;
-    private FragmentInterface fragmentInterface;
+    private HomeFragmentInterface fragmentInterface;
 
-    public BTViewHolder(@NonNull View itemView, FragmentInterface fragmentInterface) {
+    public BTViewHolder(@NonNull View itemView, HomeFragmentInterface fragmentInterface) {
         super(itemView);
         this.fragmentInterface = fragmentInterface;
         nameTextView = itemView.findViewById(R.id.bt_itemview_textview);
@@ -41,19 +43,7 @@ public class BTViewHolder extends RecyclerView.ViewHolder {
 
             @Override
             public void onClick(View v) {
-
-                        fragmentInterface.showVisibilityDetailFragment();
-                        fragmentInterface.moveToDetailFragmentWithinHomeFragment(characterModel.getName(),
-                                characterModel.getBio(),
-                                characterModel.getQuote(),
-                                characterModel.getImage(),
-                                characterModel.getUrl());
-
-//                        fragmentInterface.moveToDetailFragment(characterModel.getName(),
-//                        characterModel.getBio(),
-//                        characterModel.getQuote(),
-//                        characterModel.getImage(),
-//                        characterModel.getUrl());
+                fragmentInterface.changeVisibility(characterModel);
             }
         });
     }

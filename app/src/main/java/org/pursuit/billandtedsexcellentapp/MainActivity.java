@@ -16,18 +16,23 @@ import org.pursuit.billandtedsexcellentapp.fragment.DetailFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.FragmentInterface;
 import org.pursuit.billandtedsexcellentapp.fragment.HomeFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.QuestionFragment;
+import org.pursuit.billandtedsexcellentapp.fragment.RootFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.SplashScreenFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        moveToFirstFragment();
+
+//        getSupportFragmentManager()
+//                .beginTransaction()
+//                .replace(R.id.fragment_container,RootFragment.newInstance())
+//                .commit();
         ViewPager viewPager = findViewById(R.id.viewpager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
 
         adapter.addFragment(HomeFragment.newInstance(), "Home");
@@ -58,29 +63,26 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     }
 
     @Override
-    public void moveToDetailFragment(String name, String bio, String quote, String image, String url) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, DetailFragment.newInstance(name, bio, quote, image, url))
-                .addToBackStack(null)
-                .commit();
-    }
+    public void moveFromSplashScreenFragment() {
 
-    @Override
-    public void moveToDetailFragmentWithinHomeFragment(String name, String bio, String quote, String image, String url) {
+        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.detail_fragment_replacement_layout, DetailFragment.newInstance(name, bio, quote, image, url))
-                .addToBackStack(null)
-                .commit();
+        adapter.addFragment(HomeFragment.newInstance(), "Home");
+        adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
+        adapter.addFragment(QuestionFragment.newInstance(), "Fake");
+
+//        viewPager.setAdapter(adapter);
+//        tabLayout.setupWithViewPager(viewPager);
 
     }
 
     @Override
-    public void showVisibilityDetailFragment() {
-        LinearLayout linearLayout = findViewById(R.id.detail_fragment_replacement_layout);
-        linearLayout.setVisibility(View.VISIBLE);
+    public void moveToRootFragment() {
+        RootFragment rootFragment = RootFragment.newInstance();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, rootFragment)
+                .commit();
 
     }
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import org.pursuit.billandtedsexcellentapp.R;
 import org.pursuit.billandtedsexcellentapp.fragment.FragmentInterface;
+import org.pursuit.billandtedsexcellentapp.fragment.HomeFragmentInterface;
 import org.pursuit.billandtedsexcellentapp.model.CharactersWrapper;
 
 import java.util.List;
@@ -15,9 +16,9 @@ import java.util.List;
 public class BTAdapter extends RecyclerView.Adapter<BTViewHolder> {
 
     private List<CharactersWrapper.CharacterModel> characterList;
-    private FragmentInterface fragmentInterface;
+    private HomeFragmentInterface fragmentInterface;
 
-    public BTAdapter(List<CharactersWrapper.CharacterModel> characterList, FragmentInterface fragmentInterface) {
+    public BTAdapter(List<CharactersWrapper.CharacterModel> characterList, HomeFragmentInterface fragmentInterface) {
         this.characterList = characterList;
         this.fragmentInterface = fragmentInterface;
     }

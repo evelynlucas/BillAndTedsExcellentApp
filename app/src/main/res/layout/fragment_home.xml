@@ -13,15 +13,12 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/bt_item_view" />
 
-    <LinearLayout
+    <include
         android:id="@+id/detail_fragment_replacement_layout"
-        android:orientation="vertical"
+        layout="@layout/fragment_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="HELLO REPLACEMENT FRAGMENT"
-        android:visibility="gone">
-        <include layout="@layout/fragment_detail"/>
-    </LinearLayout>
+        android:visibility="gone" />
 </FrameLayout>
 
 

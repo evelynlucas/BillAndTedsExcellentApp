@@ -12,5 +12,20 @@
     <string name="fragment_detail_image_content_description">Image of character from Bill and Ted Movies</string>
     <string name="cardview_header_quote_text">QUOTE</string>
     <string name="quiz_intro_text">Answer these questions to find out which B and T character you are!</string>
+    <string name="question_one_text">What do you like to do at parties?</string>
+    <string name="question_one_answer_one_text">WHOA!</string>
+    <string name="question_one_answer_two_text">la glace</string>
+    <string name="question_one_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_one_answer_four_text">STATION!</string>
+    <string name="question_two_text">QUESTION TWO</string>
+    <string name="question_two_answer_one_text">WHOA!</string>
+    <string name="question_two_answer_two_text">la glace</string>
+    <string name="question_two_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_two_answer_four_text">STATION!</string>
+    <string name="question_three_text">QUESTION THREE</string>
+    <string name="question_three_answer_one_text">WHOA!</string>
+    <string name="question_three_answer_two_text">la glace</string>
+    <string name="question_three_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_three_answer_four_text">STATION!</string>
 
 </resources>
