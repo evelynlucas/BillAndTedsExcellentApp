@@ -18,6 +18,7 @@ import org.pursuit.billandtedsexcellentapp.fragment.HomeFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.QuestionFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.RootFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.SplashScreenFragment;
+import org.pursuit.billandtedsexcellentapp.fragment.WebViewFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
 
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
 
         adapter.addFragment(HomeFragment.newInstance(), "Home");
         adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
-        adapter.addFragment(QuestionFragment.newInstance(), "Fake");
+        adapter.addFragment(WebViewFragment.newInstance(), "News");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
