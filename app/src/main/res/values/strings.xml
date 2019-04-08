@@ -27,5 +27,15 @@
     <string name="question_three_answer_two_text">la glace</string>
     <string name="question_three_answer_three_text">Triumphe Napoleon!</string>
     <string name="question_three_answer_four_text">STATION!</string>
+    <string name="question_four_text">QUESTION FOUR</string>
+    <string name="question_four_answer_one_text">WHOA!</string>
+    <string name="question_four_answer_two_text">la glace</string>
+    <string name="question_four_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_four_answer_four_text">STATION!</string>
+    <string name="question_five_text">QUESTION FIVE</string>
+    <string name="question_five_answer_one_text">WHOA!</string>
+    <string name="question_five_answer_two_text">la glace</string>
+    <string name="question_five_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_five_answer_four_text">STATION!</string>
 
 </resources>
