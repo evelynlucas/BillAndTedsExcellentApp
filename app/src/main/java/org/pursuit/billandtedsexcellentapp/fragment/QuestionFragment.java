@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import org.pursuit.billandtedsexcellentapp.R;
@@ -23,6 +24,7 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
     private View answerLayout;
     private TextView answerTextView;
     private Button questionButton;
+    private RadioButton question1answer1, question1answer2, question1answer3, question1answer4;
 
 
     public QuestionFragment() {
@@ -63,11 +65,17 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         answerLayout = view.findViewById(R.id.answer_replacement_layout);
-
+        answerTextView = view.findViewById(R.id.answer_layout_text);
+        question1answer1 = view.findViewById(R.id.question1_answer1);
+        question1answer2 = view.findViewById(R.id.question1_answer2);
+        question1answer3 = view.findViewById(R.id.question1_answer3);
+        question1answer4 = view.findViewById(R.id.question1_answer4);
         questionButton = view.findViewById(R.id.question_button);
         questionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                calculateCharacter();
+                //
                 changeVisibility();
             }
         });
@@ -86,5 +94,29 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
         });
 
         answerLayout.setVisibility(View.VISIBLE);
+    }
+
+    public void calculateCharacter() {
+        int tedCounter = 0;
+        int napoleonCounter = 0;
+        int deathCounter = 0;
+        int stationCounter = 0;
+        if (question1answer1.isChecked()) {
+            tedCounter++;
+        } else if (question1answer2.isChecked()) {
+            napoleonCounter++;
+        } else if (question1answer3.isChecked()) {
+            deathCounter++;
+        } else if (question1answer4.isChecked()) {
+            stationCounter++;
+        }
+
+        if (tedCounter > 0) {
+            answerTextView.setText("Whoa, you are Ted, dude!");
+        }
+        if (napoleonCounter > 0) {
+            answerTextView.setText("Sacre bleu! Vous etes Napoleon!");
+        }
+
     }
 }
