@@ -187,16 +187,16 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
         maxCount = Collections.max(Arrays.asList(tedCounter,napoleonCounter,deathCounter,stationCounter));
 
         if (maxCount == tedCounter) {
-            answerTextView.setText("Whoa, you are Ted, dude!");
+            answerTextView.setText(getString(R.string.answer_string_ted));
             answerImageView.setImageResource(R.drawable.keanuwhoa);
         } else if (maxCount == napoleonCounter) {
-            answerTextView.setText("Sacre bleu! Vous etes Napoleon!");
+            answerTextView.setText(getString(R.string.answer_string_napoleon));
             answerImageView.setImageResource(R.drawable.triumphnapoleon);
         } else if (maxCount == deathCounter) {
-            answerTextView.setText("Get down with your bad self, Death!");
+            answerTextView.setText(getString(R.string.answer_string_death));
             answerImageView.setImageResource(R.drawable.deathonstage);
         } else if (maxCount == stationCounter) {
-            answerTextView.setText("STATION!!!");
+            answerTextView.setText(getString(R.string.answer_string_station));
             answerImageView.setImageResource(R.drawable.station);
         }
 

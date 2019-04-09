@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">BillAndTedsExcellentApp</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="splash_screen_text">Hello SPLASH SCREEN</string>
     <string name="hello_blank_fragment">Hello Blank Fragment</string>
     <string name="github_title">GitHub</string>
@@ -11,33 +10,37 @@
     <string name="no_browser_available_text">No browser available</string>
     <string name="fragment_detail_image_content_description">Image of character from Bill and Ted Movies</string>
     <string name="cardview_header_quote_text">QUOTE</string>
-    <string name="quiz_intro_text">Answer these questions to find out which B and T character you are!</string>
-    <string name="question_one_text">What do you like to do at parties?</string>
-    <string name="question_one_answer_one_text">WHOA!</string>
-    <string name="question_one_answer_two_text">la glace</string>
-    <string name="question_one_answer_three_text">Triumphe Napoleon!</string>
+    <string name="quiz_intro_text">Answer these questions to find out which Bill and Ted character you are!</string>
+    <string name="question_one_text">What do you call something cool?</string>
+    <string name="question_one_answer_one_text">Most Excellent!</string>
+    <string name="question_one_answer_two_text">Magnifique!</string>
+    <string name="question_one_answer_three_text">A near-death experience…</string>
     <string name="question_one_answer_four_text">STATION!</string>
-    <string name="question_two_text">QUESTION TWO</string>
-    <string name="question_two_answer_one_text">WHOA!</string>
-    <string name="question_two_answer_two_text">la glace</string>
-    <string name="question_two_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_two_text">What\'s your favorite food?</string>
+    <string name="question_two_answer_one_text">Anything from the Circle K, dude!</string>
+    <string name="question_two_answer_two_text">La glace</string>
+    <string name="question_two_answer_three_text">Souls of the Damned</string>
     <string name="question_two_answer_four_text">STATION!</string>
-    <string name="question_three_text">QUESTION THREE</string>
-    <string name="question_three_answer_one_text">WHOA!</string>
-    <string name="question_three_answer_two_text">la glace</string>
-    <string name="question_three_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_three_text">Your favorite music?</string>
+    <string name="question_three_answer_one_text">Wyld Stallyns!</string>
+    <string name="question_three_answer_two_text">Le Marseillaise</string>
+    <string name="question_three_answer_three_text">The sound of your final breath as it leaves your body</string>
     <string name="question_three_answer_four_text">STATION!</string>
-    <string name="question_four_text">QUESTION FOUR</string>
-    <string name="question_four_answer_one_text">WHOA!</string>
-    <string name="question_four_answer_two_text">la glace</string>
-    <string name="question_four_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_four_text">How do you defeat your enemies?</string>
+    <string name="question_four_answer_one_text">Melvin them, dude!</string>
+    <string name="question_four_answer_two_text">Triumphe Napoleon!</string>
+    <string name="question_four_answer_three_text">A game of chess</string>
     <string name="question_four_answer_four_text">STATION!</string>
-    <string name="question_five_text">QUESTION FIVE</string>
-    <string name="question_five_answer_one_text">WHOA!</string>
-    <string name="question_five_answer_two_text">la glace</string>
-    <string name="question_five_answer_three_text">Triumphe Napoleon!</string>
+    <string name="question_five_text">Your worst nightmare?</string>
+    <string name="question_five_answer_one_text">Military school in Alaska!</string>
+    <string name="question_five_answer_two_text">Waterloo</string>
+    <string name="question_five_answer_three_text">A sunken battleship</string>
     <string name="question_five_answer_four_text">STATION!</string>
     <string name="go_back_button_text">GO BACK</string>
     <string name="wyld_stallyns_logo_description">Wyld Stallyns Logo</string>
+    <string name="answer_string_ted">Whoa, you are Ted, dude!</string>
+    <string name="answer_string_napoleon">Sacre bleu! Vous êtes Napoleon!</string>
+    <string name="answer_string_death">Get down with your bad self, Death!</string>
+    <string name="answer_string_station">STATION!!!</string>
 
 </resources>
