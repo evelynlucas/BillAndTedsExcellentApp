@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="GO BACK"/>
+        android:text="@string/go_back_button_text"/>
 
     <ScrollView
         android:id="@+id/scrollview"

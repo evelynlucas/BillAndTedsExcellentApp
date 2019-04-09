@@ -37,5 +37,7 @@
     <string name="question_five_answer_two_text">la glace</string>
     <string name="question_five_answer_three_text">Triumphe Napoleon!</string>
     <string name="question_five_answer_four_text">STATION!</string>
+    <string name="go_back_button_text">GO BACK</string>
+    <string name="wyld_stallyns_logo_description">Wyld Stallyns Logo</string>
 
 </resources>
