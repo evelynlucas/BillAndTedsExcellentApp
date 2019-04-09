@@ -3,17 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light"
+    android:background="@android:color/black"
     android:id="@+id/splash_screen_frame"
     tools:context=".fragment.SplashScreenFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/wyld_stallyns_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@android:color/holo_purple"
-        android:text="@string/splash_screen_text"
-        android:textSize="36sp"/>
+        android:layout_gravity="center"
+        android:src="@drawable/wyldstallynslogo"
+        android:contentDescription="@string/wyld_stallyns_logo_description" />
 
 </FrameLayout>

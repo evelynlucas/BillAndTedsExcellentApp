@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import org.pursuit.billandtedsexcellentapp.MainActivity;
 import org.pursuit.billandtedsexcellentapp.R;
@@ -27,6 +28,7 @@ public class SplashScreenFragment extends Fragment {
     private CountDownTimer countDownTimer;
     private static int SCREEN_TIME = 3000;
     private FrameLayout frameLayout;
+    private ImageView logo;
 
 
     public SplashScreenFragment() {
@@ -57,7 +59,6 @@ public class SplashScreenFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash_screen, container, false);
     }
 
@@ -65,6 +66,18 @@ public class SplashScreenFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         frameLayout = view.findViewById(R.id.splash_screen_frame);
+        logo = view.findViewById(R.id.wyld_stallyns_logo);
+        logo.setTranslationX(-1000f);
+        logo.setTranslationY(-1000f);
+
+        logo.animate().scaleX(0.5f).scaleY(0.5f).setDuration(2000);
+        logo.animate()
+                .translationXBy(1000f)
+                .translationYBy(1000f)
+                .rotationBy(3600)
+                .setDuration(2000);
+        logo.animate().scaleX(1f).scaleY(1f).setDuration(2000);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
