@@ -42,5 +42,11 @@
     <string name="answer_string_napoleon">Sacre bleu! Vous êtes Napoleon!</string>
     <string name="answer_string_death">Get down with your bad self, Death!</string>
     <string name="answer_string_station">STATION!!!</string>
+    <string name="bill_and_ted_characters_cast_image_text">Bill and Ted characters cast</string>
+    <string name="who_am_i_button_text">WHO AM I?</string>
+    <string name="small_image_of_a_character_text">Small image of a character</string>
+    <string name="cardview_header_bio_text">BIO</string>
+    <string name="cardview_header_more_info_text">MORE INFO</string>
+    <string name="fragment_question_title">Who are you?</string>
 
 </resources>

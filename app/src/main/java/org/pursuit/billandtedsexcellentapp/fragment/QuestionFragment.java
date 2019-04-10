@@ -29,7 +29,7 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
     private QuestionFragmentInterface questionFragmentInterface;
     private View answerLayout;
     private TextView answerTextView;
-    private GifImageView answerImageView;
+    private GifImageView questionImageView, answerImageView;
     private Button questionButton;
     private RadioButton question1answer1, question1answer2, question1answer3, question1answer4,
             question2answer1, question2answer2, question2answer3, question2answer4,
@@ -67,7 +67,6 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_question, container, false);
     }
 
@@ -76,6 +75,7 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
         super.onViewCreated(view, savedInstanceState);
         answerLayout = view.findViewById(R.id.answer_replacement_layout);
         answerTextView = view.findViewById(R.id.answer_layout_text);
+        questionImageView = view.findViewById(R.id.question_imageview);
         answerImageView = view.findViewById(R.id.answer_layout_image);
         question1answer1 = view.findViewById(R.id.question1_answer1);
         question1answer2 = view.findViewById(R.id.question1_answer2);
@@ -99,19 +99,13 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
         question5answer4 = view.findViewById(R.id.question5_answer4);
 
         questionButton = view.findViewById(R.id.question_button);
-
-
-
         questionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 calculateCharacter();
-                //
                 changeVisibility();
             }
         });
-
-        // LOGIC TO TAKE ANSWERS FROM RADIO BUTTON QUESTIONS
     }
 
     @Override
@@ -123,7 +117,6 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
                 answerLayout.setVisibility(View.INVISIBLE);
             }
         });
-
         answerLayout.setVisibility(View.VISIBLE);
     }
 
@@ -184,7 +177,8 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
         }
 
         //possibly divide the below to another class in order to JUNIt the above for Max value
-        maxCount = Collections.max(Arrays.asList(tedCounter,napoleonCounter,deathCounter,stationCounter));
+//        maxCount = Collections.max(Arrays.asList(tedCounter,napoleonCounter,deathCounter,stationCounter));
+        maxCount = getMaxCount(tedCounter, napoleonCounter, deathCounter, stationCounter);
 
         if (maxCount == tedCounter) {
             answerTextView.setText(getString(R.string.answer_string_ted));
@@ -200,5 +194,11 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
             answerImageView.setImageResource(R.drawable.station);
         }
 
+    }
+
+    public static int getMaxCount(int counter1, int counter2, int counter3, int counter4) {
+        int maxCount;
+        maxCount = Collections.max(Arrays.asList(counter1, counter2, counter3, counter4));
+        return maxCount;
     }
 }

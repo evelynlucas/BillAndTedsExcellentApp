@@ -23,20 +23,26 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="QUESTION FRAGMENT"
-                android:textSize="36sp" />
+                android:gravity="center"
+                android:text="@string/fragment_question_title"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
-            <ImageView
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/question_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                android:src="@mipmap/ic_launcher" />
+                android:contentDescription="@string/bill_and_ted_characters_cast_image_text"
+                android:src="@drawable/btcast" />
 
             <TextView
                 android:id="@+id/question_intro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="8dp"
                 android:text="@string/quiz_intro_text"
+                android:textColor="@android:color/holo_orange_light"
                 android:textSize="24sp" />
 
             <android.support.v7.widget.CardView
@@ -52,6 +58,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/question_margin_start_dp"
                         android:text="@string/question_one_text"
                         android:textSize="18sp" />
 
@@ -69,7 +76,8 @@
                             android:id="@+id/question1_answer2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/question_one_answer_two_text" />
+                            android:text="@string/question_one_answer_two_text"
+                            android:textStyle="italic" />
 
                         <RadioButton
                             android:id="@+id/question1_answer3"
@@ -100,6 +108,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/question_margin_start_dp"
                         android:text="@string/question_two_text"
                         android:textSize="18sp" />
 
@@ -117,7 +126,8 @@
                             android:id="@+id/question2_answer2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/question_two_answer_two_text" />
+                            android:text="@string/question_two_answer_two_text"
+                            android:textStyle="italic" />
 
                         <RadioButton
                             android:id="@+id/question2_answer3"
@@ -148,6 +158,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/question_margin_start_dp"
                         android:text="@string/question_three_text"
                         android:textSize="18sp" />
 
@@ -165,7 +176,8 @@
                             android:id="@+id/question3_answer2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/question_three_answer_two_text" />
+                            android:text="@string/question_three_answer_two_text"
+                            android:textStyle="italic" />
 
                         <RadioButton
                             android:id="@+id/question3_answer3"
@@ -196,6 +208,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/question_margin_start_dp"
                         android:text="@string/question_four_text"
                         android:textSize="18sp" />
 
@@ -213,7 +226,8 @@
                             android:id="@+id/question4_answer2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/question_four_answer_two_text" />
+                            android:text="@string/question_four_answer_two_text"
+                            android:textStyle="italic" />
 
                         <RadioButton
                             android:id="@+id/question4_answer3"
@@ -244,6 +258,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/question_margin_start_dp"
                         android:text="@string/question_five_text"
                         android:textSize="18sp" />
 
@@ -261,7 +276,8 @@
                             android:id="@+id/question5_answer2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/question_five_answer_two_text" />
+                            android:text="@string/question_five_answer_two_text"
+                            android:textStyle="italic" />
 
                         <RadioButton
                             android:id="@+id/question5_answer3"
@@ -290,7 +306,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="WHO AM I?" />
+                    android:text="@string/who_am_i_button_text" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

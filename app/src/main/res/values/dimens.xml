@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="question_margin_start_dp">4dp</dimen>
+</resources>
