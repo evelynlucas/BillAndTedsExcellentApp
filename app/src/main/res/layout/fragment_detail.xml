@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
+    android:background="@color/colorPrimary"
     tools:context=".fragment.DetailFragment">
 
     <Button
@@ -62,7 +62,7 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/detail_bio_cardview"
-                    style="@style/cardview_style"
+                    style="@style/detail_cardview_style"
                     app:cardPreventCornerOverlap="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
 
                         <TextView
                             android:id="@+id/header_bio"
-                            style="@style/cardview_header_style"
+                            style="@style/detail_cardview_header_style"
                             android:text="@string/cardview_header_bio_text"
                             tools:text="BIO" />
 
@@ -92,7 +92,7 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/detail_quote_cardview"
-                    style="@style/cardview_style"
+                    style="@style/detail_cardview_style"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/detail_bio_cardview">
@@ -104,7 +104,7 @@
 
                         <TextView
                             android:id="@+id/header_quote"
-                            style="@style/cardview_header_style"
+                            style="@style/detail_cardview_header_style"
                             android:text="@string/cardview_header_quote_text"
                             tools:text="QUOTE" />
 
@@ -121,7 +121,7 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/detail_url_cardview"
-                    style="@style/cardview_style"
+                    style="@style/detail_cardview_style"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/detail_quote_cardview">
@@ -133,7 +133,7 @@
 
                         <TextView
                             android:id="@+id/header_url"
-                            style="@style/cardview_header_style"
+                            style="@style/detail_cardview_header_style"
                             android:text="@string/cardview_header_more_info_text"
                             tools:text="MORE INFO" />
 

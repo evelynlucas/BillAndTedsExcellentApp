@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="cardview_style">
+    <style name="detail_cardview_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">4dp</item>
@@ -16,7 +16,7 @@
         <item name="cardPreventCornerOverlap">false</item>
     </style>
 
-    <style name="cardview_header_style">
+    <style name="detail_cardview_header_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@android:color/black</item>
