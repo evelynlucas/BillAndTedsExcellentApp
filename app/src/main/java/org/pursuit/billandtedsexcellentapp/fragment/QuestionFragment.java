@@ -176,8 +176,6 @@ public class QuestionFragment extends Fragment implements QuestionFragmentInterf
             stationCounter++;
         }
 
-        //possibly divide the below to another class in order to JUNIt the above for Max value
-//        maxCount = Collections.max(Arrays.asList(tedCounter,napoleonCounter,deathCounter,stationCounter));
         maxCount = getMaxCount(tedCounter, napoleonCounter, deathCounter, stationCounter);
 
         if (maxCount == tedCounter) {
