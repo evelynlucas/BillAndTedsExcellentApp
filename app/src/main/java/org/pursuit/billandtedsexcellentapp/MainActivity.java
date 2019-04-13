@@ -1,18 +1,17 @@
 package org.pursuit.billandtedsexcellentapp;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import org.pursuit.billandtedsexcellentapp.fragment.DetailFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.FragmentInterface;
 import org.pursuit.billandtedsexcellentapp.fragment.HomeFragment;
 import org.pursuit.billandtedsexcellentapp.fragment.QuestionFragment;
@@ -22,27 +21,17 @@ import org.pursuit.billandtedsexcellentapp.fragment.WebViewFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
 
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container,RootFragment.newInstance())
                 .commit();
-//        ViewPager viewPager = findViewById(R.id.viewpager);
-//        TabLayout tabLayout = findViewById(R.id.tab_layout);
-//        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
-//
-//        adapter.addFragment(HomeFragment.newInstance(), "Home");
-//        adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
-//        adapter.addFragment(QuestionFragment.newInstance(), "Fake");
-//
-//        viewPager.setAdapter(adapter);
-//        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -52,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                 .beginTransaction()
                 .replace(R.id.fragment_container, splashScreenFragment)
                 .commit();
-
     }
 
     @Override
@@ -67,10 +55,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     @Override
     public void moveFromSplashScreenFragment() {
 
-        ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPager = findViewById(R.id.viewpager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
-
 
         adapter.addFragment(HomeFragment.newInstance(), "Home");
         adapter.addFragment(QuestionFragment.newInstance(), "Quiz");
@@ -78,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
     }
 
     @Override
@@ -88,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                 .beginTransaction()
                 .replace(R.id.fragment_container, rootFragment)
                 .commit();
-
     }
 
     @Override
@@ -119,6 +104,16 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
             startActivity(intent);
         } else {
             Toast.makeText(this, getString(R.string.no_browser_available_text), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            viewPager.setCurrentItem(0, true);
+            return true;
+        } else {
+            return super.onKeyDown(keyCode, event);
         }
     }
 }
