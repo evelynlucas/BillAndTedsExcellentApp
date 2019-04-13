@@ -110,6 +110,5 @@ public class DetailFragment extends Fragment {
         Picasso.get()
                 .load(imageString)
                 .into(imageView);
-
     }
 }

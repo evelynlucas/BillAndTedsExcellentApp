@@ -25,7 +25,6 @@ import org.pursuit.billandtedsexcellentapp.R;
 public class SplashScreenFragment extends Fragment {
 
     private FragmentInterface fragmentInterface;
-    private CountDownTimer countDownTimer;
     private static int SCREEN_TIME = 3000;
     private FrameLayout frameLayout;
     private ImageView logo;
@@ -69,7 +68,6 @@ public class SplashScreenFragment extends Fragment {
         logo = view.findViewById(R.id.wyld_stallyns_logo);
         logo.setTranslationX(-1000f);
         logo.setTranslationY(-1000f);
-
         logo.animate().scaleX(0.5f).scaleY(0.5f).setDuration(2000);
         logo.animate()
                 .translationXBy(1000f)
@@ -86,19 +84,5 @@ public class SplashScreenFragment extends Fragment {
 
             }
         }, SCREEN_TIME);
-
-//        countDownTimer = new CountDownTimer(3000,1000) {
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//                fragmentInterface.moveFromSplashScreenFragment();
-//            }
-//        };
-//        countDownTimer.start();
-
     }
 }
